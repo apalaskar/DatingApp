@@ -1,0 +1,14 @@
+C:\Users\pabhijeet39\Desktop\DatingApp\DstingApp.API\bin\Debug\netcoreapp2.2\DatingApp.API.deps.json
+C:\Users\pabhijeet39\Desktop\DatingApp\DstingApp.API\bin\Debug\netcoreapp2.2\DatingApp.API.runtimeconfig.json
+C:\Users\pabhijeet39\Desktop\DatingApp\DstingApp.API\bin\Debug\netcoreapp2.2\DatingApp.API.runtimeconfig.dev.json
+C:\Users\pabhijeet39\Desktop\DatingApp\DstingApp.API\bin\Debug\netcoreapp2.2\DatingApp.API.dll
+C:\Users\pabhijeet39\Desktop\DatingApp\DstingApp.API\bin\Debug\netcoreapp2.2\DatingApp.API.pdb
+C:\Users\pabhijeet39\Desktop\DatingApp\DstingApp.API\obj\Debug\netcoreapp2.2\DatingApp.API.csprojAssemblyReference.cache
+C:\Users\pabhijeet39\Desktop\DatingApp\DstingApp.API\obj\Debug\netcoreapp2.2\DatingApp.API.csproj.CoreCompileInputs.cache
+C:\Users\pabhijeet39\Desktop\DatingApp\DstingApp.API\obj\Debug\netcoreapp2.2\DatingApp.API.RazorAssemblyInfo.cache
+C:\Users\pabhijeet39\Desktop\DatingApp\DstingApp.API\obj\Debug\netcoreapp2.2\DatingApp.API.RazorAssemblyInfo.cs
+C:\Users\pabhijeet39\Desktop\DatingApp\DstingApp.API\obj\Debug\netcoreapp2.2\DatingApp.API.AssemblyInfoInputs.cache
+C:\Users\pabhijeet39\Desktop\DatingApp\DstingApp.API\obj\Debug\netcoreapp2.2\DatingApp.API.AssemblyInfo.cs
+C:\Users\pabhijeet39\Desktop\DatingApp\DstingApp.API\obj\Debug\netcoreapp2.2\DatingApp.API.RazorTargetAssemblyInfo.cache
+C:\Users\pabhijeet39\Desktop\DatingApp\DstingApp.API\obj\Debug\netcoreapp2.2\DatingApp.API.dll
+C:\Users\pabhijeet39\Desktop\DatingApp\DstingApp.API\obj\Debug\netcoreapp2.2\DatingApp.API.pdb
