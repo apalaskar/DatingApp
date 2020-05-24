@@ -1,0 +1,24 @@
+ dotnet ef migrations add ExtendedUserClass -- to  create migrations
+dotnet ef databse update -- apply migration changes to databse	
+
+dotnet ef migrations --h to get available commands regarding migrations
+
+dotnet ef migrations list  --gives list of created migrations fro migrations folder
+
+-can remove migration if not applied to database & applied migrations to database
+ info found in database table name "
+
+dotnet ef migrations remove -- removes lates migration which is not applied to database
+
+what if database update is applied & youu want to revert it back then follow above steps
+
+ 1. dotnet ef databse drop  --as there are some limitations using sql lite that wen can not use previous migrations which will drop currently applied migration and this will revert currently applied database migration from sqllite databse,so effient way is to drop database and re create that from migration table
+
+
+-Entity Framework RelationShips
+
+
+- Install new package in API project using VSCODE
+1. Control+Shift opens different options choose nuget
+
+2. Search your package and & then version and then your package gets installed				

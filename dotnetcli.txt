@@ -1,0 +1,26 @@
+Dot net core
+
+1>dotnet -h
+
+2>dotnet new --h 
+To get project types supported
+
+3>Create new WebApicore Project with output (-o) and name (-n) option
+dotnet new webapi  -o DatingApp.API  -n DatingApp.API
+
+4)use dotnet run to rup dot net core application 
+
+5)after changes dont stop and run again dotnet core project from vscode just run above code
+dotnet watch run  This command will automatically detect chanages autosave files and runs application 
+you just have to refresh your browser window.
+
+'DbContextOptionsBuilder' does not contain a definition for 'UseSqlite' and no extension method 'UseSqlite' accepting a first argument of type 'DbContextOptionsBuilder' could be found (are you missing a using directive or an assembly reference?) [DatingApp.API]
+
+
+-For first code first approach and scaffold initial database classes use following command
+dotnet ef migrations add InitialCreate 
+
+Create migrations folder under project
+
+-To update migration changes use following
+dotnet ef database update 

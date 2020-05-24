@@ -18,10 +18,11 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.Net;
-
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using DatingApp.API.Helpers;
+using DatingApp.API.Data;
+using AutoMapper;
 
 namespace DatingApp.API
 {
@@ -38,9 +39,18 @@ namespace DatingApp.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+           
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+            .AddJsonOptions(opt => {
+                opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            });
+
             services.AddCors();
+            services.AddAutoMapper();
+            services.AddTransient<Seed>(); //to add data in sqlite for testing
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<IDatingRepository, DatingRepository>();
+            
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).
             AddJwtBearer(
                 Options =>
@@ -58,7 +68,7 @@ namespace DatingApp.API
             );
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, Seed seeder)
         {
             if (env.IsDevelopment())
             {
@@ -68,6 +78,8 @@ namespace DatingApp.API
             {
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 // app.UseHsts();
+
+                //Global error handling at production side
                 app.UseExceptionHandler(builder =>
                 {
                     builder.Run(async context =>
@@ -82,8 +94,9 @@ namespace DatingApp.API
                     });
                 });
             }
-
+           // seeder.SeedUsers();  //call only when you want to seed users randon data to users and photos table
             // app.UseHttpsRedirection();
+
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseAuthentication();
             app.UseMvc();

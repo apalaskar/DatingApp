@@ -6,17 +6,17 @@ import { MemberListComponent } from './member-list/member-list/member-list.compo
 import { AuthGuard } from "./_guards/auth.guard";
 
 export const  appRoutes:Routes = [
-    {path:'',component:HomeComponent},
+    {path:'',component:HomeComponent}, //Home if only http://localhost:4200/ is pasted in browser & user is not logged in
     {
         path:'',
         runGuardsAndResolvers:"always",
         canActivate:[AuthGuard],
-        children:[
+        children:[ // to all children we specify AuthGuard
             {path:'members',component:MemberListComponent },
             {path:'messages',component:MessagesComponent},
             {path:'lists',component:ListsComponent},
         ]
     },
    
-    {path:'**',redirectTo:'',pathMatch:'full'},
+    {path:'**',redirectTo:'',pathMatch:'full'}, //annonymous user to home
 ]; 
